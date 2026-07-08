@@ -1,0 +1,72 @@
+{
+  "unsigned_bit_depth": 10,
+
+  "waveform_spatial_footprint": {
+    "footprint_relative_threshold": 0.25,
+    "footprint_min_p2p_uv": 10.0
+  },
+
+  "max_interval_burst_detection": {
+    "max_start_isi_s": 0.10,
+    "max_end_isi_s": 0.20,
+    "min_interburst_interval_s": 0.20,
+    "min_burst_duration_s": 0.005,
+    "min_spikes_per_burst": 3
+  },
+
+  "network_burst_detection": {
+    "bin_s": 0.020,
+    "smooth_bins": 5,
+    "threshold_mad": 5.0,
+    "min_units_abs": 3,
+    "min_units_frac": 0.10,
+    "min_duration_s": 0.040,
+    "merge_gap_s": 0.100
+  },
+
+  "sttc": {
+    "dt_s": 0.050,
+    "n_shuffles": 50,
+    "alpha": 0.05,
+    "min_spikes_per_unit": 5,
+    "connectivity_max_units": 100,
+    "save_dense_matrix": false,
+    "progress_every_pairs": 500
+  },
+
+  "cleanup": {
+    "delete_cache_after_success": true,
+    "delete_analyzer_after_success": true,
+    "delete_kilosort_output_after_success": false,
+    "delete_cache_when_no_units": true,
+    "delete_kilosort_when_no_units": false
+  },
+
+  "perturbation_windows": [
+    {
+      "window_name": "full_recording",
+      "start_s": 0.0,
+      "end_s": null
+    },
+    {
+      "window_name": "baseline_0_5min",
+      "start_s": 0.0,
+      "end_s": 300.0
+    },
+    {
+      "window_name": "early_response_5_10min",
+      "start_s": 300.0,
+      "end_s": 600.0
+    },
+    {
+      "window_name": "late_response_10_20min",
+      "start_s": 600.0,
+      "end_s": 1200.0
+    },
+    {
+      "window_name": "washout_20_30min",
+      "start_s": 1200.0,
+      "end_s": 1800.0
+    }
+  ]
+}
